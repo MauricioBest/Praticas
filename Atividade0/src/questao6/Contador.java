@@ -27,5 +27,35 @@ public class Contador {
 			this.desfeito = true;
 		}
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (desfeito ? 1231 : 1237);
+		result = prime * result + valor;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contador other = (Contador) obj;
+		if (desfeito != other.desfeito)
+			return false;
+		if (valor != other.valor)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+	return "valor: " + valor;
+	}
 
 }
